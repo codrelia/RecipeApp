@@ -29,12 +29,9 @@ class TabBarController: UITabBarController {
     }
     
     override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
         tabBar.frame.size.height = Constants.tabBarHeight
         tabBar.frame.origin.y = view.frame.height - Constants.tabBarHeight
         
-        //tabBar.itemPositioning = .fill
         tabBar.addSubview(indicator)
         
     }
@@ -85,7 +82,7 @@ private extension TabBarController {
     func generateViewController(viewController: UIViewController, title: String?, image: UIImage?) -> UIViewController {
         viewController.tabBarItem.title = title
         viewController.tabBarItem.image = image
-        return viewController
+        return UINavigationController(rootViewController: viewController)
     }
     
     func changePositionOfInducator(_ item: UITabBarItem) {

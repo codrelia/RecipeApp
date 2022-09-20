@@ -21,6 +21,7 @@
 		3B92BD5828D8993E00A6DBAA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92BD5628D8993E00A6DBAA /* SettingsViewController.swift */; };
 		3B92BD5928D8993E00A6DBAA /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B92BD5728D8993E00A6DBAA /* SettingsViewController.xib */; };
 		3B92BD5C28D89DAD00A6DBAA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92BD5B28D89DAD00A6DBAA /* Colors.swift */; };
+		3BA0C75928D9C7C000A79A4B /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA0C75828D9C7C000A79A4B /* NavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3B92BD5628D8993E00A6DBAA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3B92BD5728D8993E00A6DBAA /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		3B92BD5B28D89DAD00A6DBAA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3BA0C75828D9C7C000A79A4B /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,10 @@
 		3B92BD4428D8961500A6DBAA /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				3BA0C75328D9BAF900A79A4B /* Router */,
+				3BA0C75228D9BAF200A79A4B /* Entity */,
+				3BA0C75128D9BAED00A79A4B /* Presenter */,
+				3BA0C75028D9BAE600A79A4B /* Interactor */,
 				3B92BD4928D8974500A6DBAA /* View */,
 			);
 			path = MainModule;
@@ -163,6 +169,7 @@
 		3B92BD4A28D8985900A6DBAA /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				3BA0C75728D9C79200A79A4B /* NavigationBar */,
 				3B92BD4B28D8987400A6DBAA /* TabBarController */,
 			);
 			path = Custom;
@@ -193,6 +200,42 @@
 				3B92BD5728D8993E00A6DBAA /* SettingsViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3BA0C75028D9BAE600A79A4B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3BA0C75128D9BAED00A79A4B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3BA0C75228D9BAF200A79A4B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3BA0C75328D9BAF900A79A4B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3BA0C75728D9C79200A79A4B /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				3BA0C75828D9C7C000A79A4B /* NavigationBar.swift */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +317,7 @@
 				3B92BD4828D8968800A6DBAA /* Images.swift in Sources */,
 				3B92BD5828D8993E00A6DBAA /* SettingsViewController.swift in Sources */,
 				3B92BD2C28D895AE00A6DBAA /* AppDelegate.swift in Sources */,
+				3BA0C75928D9C7C000A79A4B /* NavigationBar.swift in Sources */,
 				3B92BD4E28D898A600A6DBAA /* TabBarController.swift in Sources */,
 				3B92BD2E28D895AE00A6DBAA /* SceneDelegate.swift in Sources */,
 				3B92BD5428D8991300A6DBAA /* FavoriteViewController.swift in Sources */,
