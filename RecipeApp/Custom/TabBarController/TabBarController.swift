@@ -2,11 +2,21 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
+    // MARK: - Routers
+    
+    var mainRouter: MainModuleRouter = MainModuleRouter()
+    
     // MARK: - Constants
     
     private enum Constants {
         static let tabBarWidth = UIScreen.main.bounds.width
-        static let tabBarHeight = UIScreen.main.bounds.height * 0.1
+        static let currentTabBarHeight: Double = {
+            if Int(UIDevice.current.name.split(separator: " ")[1])! <= 8 {
+                return UIScreen.main.bounds.height * 0.1
+            } else {
+                return UIScreen.main.bounds.height * 0.11
+            }
+        }()
     }
     
     // MARK: - UIViews
@@ -29,9 +39,9 @@ class TabBarController: UITabBarController {
     }
     
     override func viewDidLayoutSubviews() {
-        tabBar.frame.size.height = Constants.tabBarHeight
-        tabBar.frame.origin.y = view.frame.height - Constants.tabBarHeight
         
+        tabBar.frame.size.height = Constants.currentTabBarHeight
+        tabBar.frame.origin.y = view.frame.height - Constants.currentTabBarHeight / 1.1
         tabBar.addSubview(indicator)
         
     }
@@ -54,7 +64,7 @@ private extension TabBarController {
         
         viewControllers = [
             generateViewController(
-                viewController: MainViewController(),
+                viewController: mainRouter.view!,
                 title: nil,
                 image: mainIconImages),
             generateViewController(
@@ -71,12 +81,14 @@ private extension TabBarController {
         tabBar.unselectedItemTintColor = textColor
         tabBar.tintColor = .white
         
-        let path = UIBezierPath(roundedRect:CGRect(x: 0, y: 0, width: Constants.tabBarWidth, height: Constants.tabBarHeight),
+        let path = UIBezierPath(roundedRect:CGRect(x: 0, y: 0, width: Constants.tabBarWidth, height: Constants.currentTabBarHeight),
                                 byRoundingCorners:[.topRight, .topLeft],
                                 cornerRadii: CGSize(width: 30, height:  30))
         let maskLayer = CAShapeLayer()
         maskLayer.path = path.cgPath
         tabBar.layer.mask = maskLayer
+        
+        tabBar.barTintColor = mainColor
     }
     
     func generateViewController(viewController: UIViewController, title: String?, image: UIImage?) -> UIViewController {
@@ -105,9 +117,9 @@ private extension TabBarController {
     }
     
     func animationOfTabBarButton(_ view: UIView) {
-        let timeInterval: TimeInterval = 0.3
-        let propertyAnimator = UIViewPropertyAnimator(duration: timeInterval, dampingRatio: 0.5) {
-            view.transform = CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9)
+        let timeInterval: TimeInterval = 0.2
+        let propertyAnimator = UIViewPropertyAnimator(duration: timeInterval, dampingRatio: 0.9) {
+            view.transform = CGAffineTransform.identity.scaledBy(x: 0.7, y: 0.7)
         }
         propertyAnimator.addAnimations({ view.transform = .identity }, delayFactor: CGFloat(timeInterval))
         propertyAnimator.startAnimation()

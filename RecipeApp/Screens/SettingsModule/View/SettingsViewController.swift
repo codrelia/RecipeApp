@@ -14,6 +14,6 @@ class SettingsViewController: UIViewController {
 
 private extension SettingsViewController {
     func configureView() {
-        view.backgroundColor = backgroundColor
+        view.backgroundColor = customBackgroundColor
     }
 }

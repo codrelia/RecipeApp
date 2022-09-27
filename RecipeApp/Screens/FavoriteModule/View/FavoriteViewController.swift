@@ -15,6 +15,6 @@ class FavoriteViewController: UIViewController {
 
 private extension FavoriteViewController {
     func configureView() {
-        view.backgroundColor = backgroundColor
+        view.backgroundColor = customBackgroundColor
     }
 }
