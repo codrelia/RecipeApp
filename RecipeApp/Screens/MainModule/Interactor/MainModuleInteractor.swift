@@ -26,7 +26,7 @@ class MainModuleInteractor {
 
 private extension MainModuleInteractor {
     
-    func request(direction: path, completion: @escaping (Recipes?, Error?) -> ()){
+    func request(direction: path, completion: @escaping (Result<Recipes, Error>) -> ()){
         let url = URL(string: api + direction.rawValue)
         guard let url = url else {
             print("Optional url")
@@ -35,13 +35,13 @@ private extension MainModuleInteractor {
         let task = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
             guard let self = self else { return }
             guard let data = data else {
-                completion(nil, error)
+                completion(.failure(error!))
                 return
             }
             
             let jsonDecoder = JSONDecoder()
             self.popularRecipesEntity = try? jsonDecoder.decode(Recipes.self, from: data)
-            completion(self.popularRecipesEntity, nil)
+            completion(.success(self.popularRecipesEntity!))
             
             DispatchQueue.main.sync {
                 self.getImage()
@@ -68,8 +68,14 @@ private extension MainModuleInteractor {
 extension MainModuleInteractor: MainModuleInteractorInput {
     
     func getRequestPopularRecipes(completion: @escaping (Recipes?, Error?) -> ()) {
-        request(direction: path.popularGeneralInfo) { recipes, error in
-            completion(recipes, error)
+        request(direction: path.popularGeneralInfo) { result in
+            switch result {
+            case .success(let recipes):
+                completion(recipes, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+            
         }
     }
     

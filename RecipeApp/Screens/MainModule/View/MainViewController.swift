@@ -72,7 +72,6 @@ private extension MainViewController {
     }
     
     @objc func updateTable(_ sender: UIRefreshControl) {
-        print("Обновить")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.refreshControl.endRefreshing()
         }
