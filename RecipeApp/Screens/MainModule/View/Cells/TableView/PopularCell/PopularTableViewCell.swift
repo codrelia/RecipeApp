@@ -14,10 +14,6 @@ class PopularTableViewCell: UITableViewCell {
         super.awakeFromNib()
         configurePopularCollectionView()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
     func setPopularOutput(_ view: MainViewController) {
         self.popularOutput = view
@@ -33,6 +29,7 @@ private extension PopularTableViewCell {
         popularCollectionView.dataSource = self
         popularCollectionView.delegate = self
         popularCollectionView.backgroundColor = customBackgroundColor
+        popularCollectionView.showsHorizontalScrollIndicator = false
     }
     
     func configureCell() {
@@ -59,17 +56,44 @@ extension PopularTableViewCell: UICollectionViewDataSource, UICollectionViewDele
             return cell
         }
         
+        cell.setPopularCollectionOutput(self)
+        
         let count = popularOutput?.getCountOfPopular()
         if count != 0 {
             guard let recipe = popularOutput?.getCurrentPopularItem(indexPath.row) else {
                 return UICollectionViewCell()
             }
-            cell.image = recipe.dataImage
-            cell.name = recipe.nameRecipe
+            
+            guard let favoriteRecipes = popularOutput?.getFavoriteRecipes() else {
+                return UICollectionViewCell()
+            }
+            
             cell.isTapped = false
+            
+            for i in favoriteRecipes {
+                if i == recipe.idRecipe {
+                    cell.isTapped = true
+                }
+            }
+            
+            cell.name = recipe.nameRecipe
             cell.time = recipe.timeCooking
             cell.caloric = recipe.caloricContent[0].caloric
-            cell.rating = Double(recipe.rating)
+            cell.rating = recipe.rating
+            cell.image = recipe.dataImage
+            cell.colorOfInforationView = .white
+            cell.isLoad = false
+            cell.id = recipe.idRecipe
+            
+        } else {
+            
+            cell.image = UIImage(color: loadColor)
+            cell.time = 0
+            cell.caloric = 0
+            cell.rating = 0
+            cell.name = ""
+            cell.colorOfInforationView = loadColor
+            cell.isLoad = true
         }
         
         return cell
@@ -87,5 +111,35 @@ extension PopularTableViewCell: UICollectionViewDataSource, UICollectionViewDele
         UIEdgeInsets(top: 0, left: 28, bottom: 0, right: 28)
     }
     
-    
 }
+
+// MARK: - PopularInput
+
+extension PopularTableViewCell: PopularInput {
+    func reloadCell() {
+        self.popularCollectionView.reloadData()
+    }
+}
+
+// MARK: -
+
+extension PopularTableViewCell: PopularCollectionOutput {
+    func actionsWithRecipe(_ id: Int) {
+        popularOutput?.getActionWithRecipe(id)
+    }
+}
+
+
+public extension UIImage {
+     convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+       let rect = CGRect(origin: .zero, size: size)
+       UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+       color.setFill()
+       UIRectFill(rect)
+       let image = UIGraphicsGetImageFromCurrentImageContext()
+       UIGraphicsEndImageContext()
+       
+       guard let cgImage = image?.cgImage else { return nil }
+       self.init(cgImage: cgImage)
+     }
+   }

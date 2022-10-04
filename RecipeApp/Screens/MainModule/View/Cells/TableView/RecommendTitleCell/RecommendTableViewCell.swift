@@ -21,10 +21,6 @@ class RecommendTableViewCell: UITableViewCell {
         
         configureCell()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
 }
 
@@ -37,5 +33,7 @@ private extension RecommendTableViewCell {
         headerLabel.numberOfLines = 1
         
         backgroundColor = customBackgroundColor
+        
+        selectionStyle = .none
     }
 }

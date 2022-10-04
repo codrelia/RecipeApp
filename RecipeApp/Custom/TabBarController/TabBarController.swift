@@ -5,13 +5,15 @@ class TabBarController: UITabBarController {
     // MARK: - Routers
     
     var mainRouter: MainModuleRouter = MainModuleRouter()
+    var favoriteRouter: FavoriteModuleRouter = FavoriteModuleRouter()
     
     // MARK: - Constants
     
     private enum Constants {
         static let tabBarWidth = UIScreen.main.bounds.width
         static let currentTabBarHeight: Double = {
-            if Int(UIDevice.current.name.split(separator: " ")[1])! <= 8 {
+            let height = UIScreen.main.bounds.height
+            if height <= 700 {
                 return UIScreen.main.bounds.height * 0.1
             } else {
                 return UIScreen.main.bounds.height * 0.11
@@ -68,7 +70,7 @@ private extension TabBarController {
                 title: nil,
                 image: mainIconImages),
             generateViewController(
-                viewController: FavoriteViewController(),
+                viewController: favoriteRouter.view!,
                 title: nil,
                 image: favoriteIconImages),
             generateViewController(
@@ -94,7 +96,7 @@ private extension TabBarController {
     func generateViewController(viewController: UIViewController, title: String?, image: UIImage?) -> UIViewController {
         viewController.tabBarItem.title = title
         viewController.tabBarItem.image = image
-        return UINavigationController(rootViewController: viewController)
+        return viewController
     }
     
     func changePositionOfInducator(_ item: UITabBarItem) {

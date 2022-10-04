@@ -16,6 +16,13 @@ class NavigationTableViewCell: UITableViewCell {
         }
     }
     
+    var isButtons: Bool = true {
+        didSet {
+            searchButton.isHidden = isButtons
+            profileButton.isHidden = isButtons
+        }
+    }
+    
     // MARK: - Lyfecycle
     
     override func awakeFromNib() {
@@ -41,5 +48,7 @@ private extension NavigationTableViewCell {
         
         profileButton.tintColor = mainColor
         profileButton.setImage(profileIconImage, for: .normal)
+        
+        selectionStyle = .none
     }
 }

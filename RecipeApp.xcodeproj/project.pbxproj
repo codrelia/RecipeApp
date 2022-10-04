@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B044D0228EC616D0045047B /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B044D0128EC616D0045047B /* ErrorMessage.swift */; };
 		3B1C9E1D28DA11D300A6441E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C9E1B28DA11D300A6441E /* MainViewController.swift */; };
 		3B1C9E1E28DA11D300A6441E /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1C9E1C28DA11D300A6441E /* MainViewController.xib */; };
 		3B1C9E2328DA145D00A6441E /* PopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C9E2128DA145D00A6441E /* PopularCollectionViewCell.swift */; };
 		3B1C9E2428DA145D00A6441E /* PopularCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1C9E2228DA145D00A6441E /* PopularCollectionViewCell.xib */; };
+		3B3BB68928E5B734006431F0 /* FavoriteModuleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3BB68828E5B734006431F0 /* FavoriteModuleEntity.swift */; };
+		3B4A447728E8B55B00E0A8F5 /* PopularCollectionOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A447628E8B55B00E0A8F5 /* PopularCollectionOutput.swift */; };
+		3B59C62028E8A43500C7001B /* FavoriteModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59C61F28E8A43500C7001B /* FavoriteModuleRouter.swift */; };
+		3B59C62228E8A47D00C7001B /* FavoriteModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59C62128E8A47D00C7001B /* FavoriteModuleInteractor.swift */; };
+		3B59C62428E8A50100C7001B /* FavoriteModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59C62328E8A50100C7001B /* FavoriteModulePresenter.swift */; };
+		3B59C62828E8A5FD00C7001B /* FavoriteViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59C62728E8A5FD00C7001B /* FavoriteViewInput.swift */; };
+		3B59C62A28E8A60C00C7001B /* FavoriteViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59C62928E8A60C00C7001B /* FavoriteViewOutput.swift */; };
 		3B6B737328DA5CF500FAA386 /* NavigationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B737128DA5CF500FAA386 /* NavigationTableViewCell.swift */; };
 		3B6B737428DA5CF500FAA386 /* NavigationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6B737228DA5CF500FAA386 /* NavigationTableViewCell.xib */; };
 		3B6B737828DA622D00FAA386 /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B737628DA622D00FAA386 /* PopularTableViewCell.swift */; };
@@ -33,6 +41,7 @@
 		3B92BD5828D8993E00A6DBAA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92BD5628D8993E00A6DBAA /* SettingsViewController.swift */; };
 		3B92BD5928D8993E00A6DBAA /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B92BD5728D8993E00A6DBAA /* SettingsViewController.xib */; };
 		3B92BD5C28D89DAD00A6DBAA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92BD5B28D89DAD00A6DBAA /* Colors.swift */; };
+		3BB4CB0728E8DCAD0042CA00 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4CB0628E8DCAD0042CA00 /* UserDefaultsKeys.swift */; };
 		3BDA88FE28E1E80E00E50897 /* PopularInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA88FD28E1E80E00E50897 /* PopularInput.swift */; };
 		3BDA890028E1E82800E50897 /* PopularOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA88FF28E1E82800E50897 /* PopularOutput.swift */; };
 		3BF7FD4428E0A6EF004ECFDE /* MainModuleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7FD4328E0A6EF004ECFDE /* MainModuleEntity.swift */; };
@@ -46,10 +55,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B044D0128EC616D0045047B /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		3B1C9E1B28DA11D300A6441E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3B1C9E1C28DA11D300A6441E /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		3B1C9E2128DA145D00A6441E /* PopularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionViewCell.swift; sourceTree = "<group>"; };
 		3B1C9E2228DA145D00A6441E /* PopularCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCollectionViewCell.xib; sourceTree = "<group>"; };
+		3B3BB68828E5B734006431F0 /* FavoriteModuleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModuleEntity.swift; sourceTree = "<group>"; };
+		3B4A447628E8B55B00E0A8F5 /* PopularCollectionOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionOutput.swift; sourceTree = "<group>"; };
+		3B59C61F28E8A43500C7001B /* FavoriteModuleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModuleRouter.swift; sourceTree = "<group>"; };
+		3B59C62128E8A47D00C7001B /* FavoriteModuleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModuleInteractor.swift; sourceTree = "<group>"; };
+		3B59C62328E8A50100C7001B /* FavoriteModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModulePresenter.swift; sourceTree = "<group>"; };
+		3B59C62728E8A5FD00C7001B /* FavoriteViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewInput.swift; sourceTree = "<group>"; };
+		3B59C62928E8A60C00C7001B /* FavoriteViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewOutput.swift; sourceTree = "<group>"; };
 		3B6B737128DA5CF500FAA386 /* NavigationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTableViewCell.swift; sourceTree = "<group>"; };
 		3B6B737228DA5CF500FAA386 /* NavigationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationTableViewCell.xib; sourceTree = "<group>"; };
 		3B6B737628DA622D00FAA386 /* PopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
@@ -74,6 +91,7 @@
 		3B92BD5628D8993E00A6DBAA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3B92BD5728D8993E00A6DBAA /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		3B92BD5B28D89DAD00A6DBAA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3BB4CB0628E8DCAD0042CA00 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		3BDA88FD28E1E80E00E50897 /* PopularInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularInput.swift; sourceTree = "<group>"; };
 		3BDA88FF28E1E82800E50897 /* PopularOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularOutput.swift; sourceTree = "<group>"; };
 		3BF7FD4328E0A6EF004ECFDE /* MainModuleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleEntity.swift; sourceTree = "<group>"; };
@@ -97,6 +115,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B044CFE28EC55870045047B /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				3B044D0128EC616D0045047B /* ErrorMessage.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		3B18BD4128E3A6160007BBEC /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
 		3B1C9E1F28DA143000A6441E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +148,63 @@
 			path = PopularCell;
 			sourceTree = "<group>";
 		};
+		3B3BB68428E5B6C8006431F0 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3B59C62128E8A47D00C7001B /* FavoriteModuleInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3B3BB68528E5B6DF006431F0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3B59C62328E8A50100C7001B /* FavoriteModulePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3B3BB68628E5B6F3006431F0 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3B3BB68828E5B734006431F0 /* FavoriteModuleEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3B3BB68728E5B6FB006431F0 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3B59C61F28E8A43500C7001B /* FavoriteModuleRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3B4A447528E8B54500E0A8F5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3B4A447628E8B55B00E0A8F5 /* PopularCollectionOutput.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3B59C62528E8A5E300C7001B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3B59C62628E8A5EC00C7001B /* View */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3B59C62628E8A5EC00C7001B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B59C62728E8A5FD00C7001B /* FavoriteViewInput.swift */,
+				3B59C62928E8A60C00C7001B /* FavoriteViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3B6B736728DA5BA000FAA386 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +217,7 @@
 		3B6B736828DA5BA800FAA386 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				3B4A447528E8B54500E0A8F5 /* Protocols */,
 				3B6B737F28DA688900FAA386 /* RecomendCollectionCell */,
 				3B6B737A28DA65A300FAA386 /* RecommendTitleCell */,
 				3B6B737528DA620900FAA386 /* PopularCell */,
@@ -247,6 +338,7 @@
 		3B92BD4328D8960D00A6DBAA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				3B18BD4128E3A6160007BBEC /* DetailModule */,
 				3B92BD4628D8962600A6DBAA /* SettingsModule */,
 				3B92BD4528D8962000A6DBAA /* FavoriteModule */,
 				3B92BD4428D8961500A6DBAA /* MainModule */,
@@ -270,6 +362,10 @@
 			isa = PBXGroup;
 			children = (
 				3B92BD5028D898F600A6DBAA /* View */,
+				3B3BB68428E5B6C8006431F0 /* Interactor */,
+				3B3BB68528E5B6DF006431F0 /* Presenter */,
+				3B3BB68628E5B6F3006431F0 /* Entity */,
+				3B3BB68728E5B6FB006431F0 /* Router */,
 			);
 			path = FavoriteModule;
 			sourceTree = "<group>";
@@ -296,6 +392,8 @@
 		3B92BD4A28D8985900A6DBAA /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				3B044CFE28EC55870045047B /* Errors */,
+				3BB4CB0528E8DC9A0042CA00 /* Enums */,
 				3B92BD4B28D8987400A6DBAA /* TabBarController */,
 			);
 			path = Custom;
@@ -313,6 +411,7 @@
 		3B92BD5028D898F600A6DBAA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3B59C62528E8A5E300C7001B /* Protocols */,
 				3B92BD5228D8991300A6DBAA /* FavoriteViewController.swift */,
 				3B92BD5328D8991300A6DBAA /* FavoriteViewController.xib */,
 			);
@@ -359,6 +458,14 @@
 				3BF7FD4E28E0B721004ECFDE /* MainModuleRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		3BB4CB0528E8DC9A0042CA00 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				3BB4CB0628E8DCAD0042CA00 /* UserDefaultsKeys.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		3BDA88FB28E1E7E300E50897 /* View */ = {
@@ -479,23 +586,32 @@
 			files = (
 				3B92BD5C28D89DAD00A6DBAA /* Colors.swift in Sources */,
 				3BF7FD4828E0A7C5004ECFDE /* MainModuleInteractor.swift in Sources */,
+				3B4A447728E8B55B00E0A8F5 /* PopularCollectionOutput.swift in Sources */,
 				3BF7FD4B28E0B2E2004ECFDE /* MainModuleInteractorInput.swift in Sources */,
+				3BB4CB0728E8DCAD0042CA00 /* UserDefaultsKeys.swift in Sources */,
 				3B92BD4828D8968800A6DBAA /* Images.swift in Sources */,
 				3B1C9E2328DA145D00A6441E /* PopularCollectionViewCell.swift in Sources */,
 				3B92BD5828D8993E00A6DBAA /* SettingsViewController.swift in Sources */,
+				3B59C62228E8A47D00C7001B /* FavoriteModuleInteractor.swift in Sources */,
 				3B92BD2C28D895AE00A6DBAA /* AppDelegate.swift in Sources */,
 				3BF7FD4428E0A6EF004ECFDE /* MainModuleEntity.swift in Sources */,
 				3BF7FD5328E0BCF2004ECFDE /* MainViewInput.swift in Sources */,
 				3B6B738728DA6C2B00FAA386 /* RecommendCollectionViewCell.swift in Sources */,
+				3B044D0228EC616D0045047B /* ErrorMessage.swift in Sources */,
 				3BDA890028E1E82800E50897 /* PopularOutput.swift in Sources */,
 				3BF7FD4628E0A7A1004ECFDE /* MainModulePresenter.swift in Sources */,
 				3B92BD4E28D898A600A6DBAA /* TabBarController.swift in Sources */,
 				3B6B737828DA622D00FAA386 /* PopularTableViewCell.swift in Sources */,
+				3B59C62028E8A43500C7001B /* FavoriteModuleRouter.swift in Sources */,
 				3B1C9E1D28DA11D300A6441E /* MainViewController.swift in Sources */,
 				3BF7FD5628E0BCFF004ECFDE /* MainViewOutput.swift in Sources */,
 				3BF7FD4F28E0B721004ECFDE /* MainModuleRouter.swift in Sources */,
 				3B6B738228DA690600FAA386 /* RecommendCollectionTableViewCell.swift in Sources */,
+				3B59C62828E8A5FD00C7001B /* FavoriteViewInput.swift in Sources */,
+				3B59C62A28E8A60C00C7001B /* FavoriteViewOutput.swift in Sources */,
+				3B3BB68928E5B734006431F0 /* FavoriteModuleEntity.swift in Sources */,
 				3B6B737D28DA65C700FAA386 /* RecommendTableViewCell.swift in Sources */,
+				3B59C62428E8A50100C7001B /* FavoriteModulePresenter.swift in Sources */,
 				3B92BD2E28D895AE00A6DBAA /* SceneDelegate.swift in Sources */,
 				3B92BD5428D8991300A6DBAA /* FavoriteViewController.swift in Sources */,
 				3B6B737328DA5CF500FAA386 /* NavigationTableViewCell.swift in Sources */,

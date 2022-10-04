@@ -13,7 +13,7 @@ struct Item: Codable {
     let urlImage: String
     let timeCooking: Int
     let category: [Category]
-    let rating: Int
+    let rating: Double
     let caloricContent: [CaloricContent]
     
     var dataImage: UIImage? = nil

@@ -7,7 +7,7 @@ class PopularCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var informationView: UIView!
     @IBOutlet private weak var favoriteButton: UIButton!
     @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet private weak var clockImageView: UIImageView!
     @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet private weak var caloricImageView: UIImageView!
@@ -15,8 +15,14 @@ class PopularCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var ratingLabel: UILabel!
     @IBOutlet private weak var ratingImageView: UIImageView!
     
+    // MARK: -
+    
+    weak var popularCollectionOutput: PopularCollectionOutput?
+    
     
     // MARK: - Properties
+    
+    var id: Int = 0
     
     var image: UIImage? = UIImage() {
         didSet {
@@ -58,7 +64,31 @@ class PopularCollectionViewCell: UICollectionViewCell {
     
     var rating: Double = 0 {
         didSet {
-            ratingLabel.text = "\(rating)"
+            let floorNumber = Int(rating)
+            if Double(floorNumber) != rating {
+                ratingLabel.text = "\(rating)"
+            } else {
+                ratingLabel.text = "\(floorNumber)"
+            }
+        }
+    }
+    
+    var colorOfInforationView = UIColor.white {
+        didSet {
+            informationView.backgroundColor = colorOfInforationView
+        }
+    }
+    
+    var isLoad: Bool = false {
+        didSet {
+            caloricImageView.isHidden = isLoad
+            caloricLabel.isHidden = isLoad
+            
+            timeLabel.isHidden = isLoad
+            clockImageView.isHidden = isLoad
+            
+            ratingImageView.isHidden = isLoad
+            ratingLabel.isHidden = isLoad
         }
     }
     
@@ -68,7 +98,20 @@ class PopularCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         configureCell()
     }
-
+    
+    // MARK: - Actions
+    
+    @IBAction func tapOnFavoriteButton(_ sender: Any) {
+        animationButton()
+        popularCollectionOutput!.actionsWithRecipe(id)
+        
+    }
+    
+    func setPopularCollectionOutput(_ popularCollectionOutput: PopularCollectionOutput) {
+        self.popularCollectionOutput = popularCollectionOutput
+    }
+    
+    
 }
 
 // MARK: - Private methods
@@ -105,5 +148,17 @@ private extension PopularCollectionViewCell {
         ratingImageView.tintColor = ratingColor
         ratingImageView.contentMode = .scaleAspectFill
         
+    }
+    
+    func animationButton() {
+        UIView.animate(withDuration: 0.1, delay: 0.0) {
+            self.favoriteButton.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        } completion: { _ in
+            UIView.animate(withDuration: 0.1, delay: 0.0) {
+                self.favoriteButton.transform = CGAffineTransform.identity
+                self.isTapped.toggle()
+            } completion: { _ in
+            }
+        }
     }
 }
