@@ -14,10 +14,12 @@ let profileIconImage: UIImage? = .init(named: "profile-icon")
 
 // MARK: - CollectionViewCell
 
-let tappedHeartIconImage: UIImage? = .init(systemName: "heart.fill")
-let heartIconImage: UIImage? = .init(systemName: "heart")
-let caloricIconImage: UIImage? = .init(systemName: "flame.fill")
-let timeIconImage: UIImage? = .init(systemName: "clock.fill")
-let ratingIconImage: UIImage? = .init(systemName: "star.fill")
+let tappedHeartIconImage: UIImage? = .init(named: "filled-heart")
+let heartIconImage: UIImage? = .init(named: "heart")
+let caloricIconImage: UIImage? = .init(named: "flame")
+let timeIconImage: UIImage? = .init(named: "clock")
+let ratingIconImage: UIImage? = .init(named: "rating")
 
+// MARK: - DetailImageTableViewCell
 
+let separatorImage: UIImage? = .init(named: "separator")

@@ -96,7 +96,7 @@ private extension TabBarController {
     func generateViewController(viewController: UIViewController, title: String?, image: UIImage?) -> UIViewController {
         viewController.tabBarItem.title = title
         viewController.tabBarItem.image = image
-        return viewController
+        return UINavigationController(rootViewController: viewController)
     }
     
     func changePositionOfInducator(_ item: UITabBarItem) {
