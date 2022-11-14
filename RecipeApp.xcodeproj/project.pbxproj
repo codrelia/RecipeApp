@@ -25,16 +25,10 @@
 		3B1C9E2328DA145D00A6441E /* PopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C9E2128DA145D00A6441E /* PopularCollectionViewCell.swift */; };
 		3B1C9E2428DA145D00A6441E /* PopularCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1C9E2228DA145D00A6441E /* PopularCollectionViewCell.xib */; };
 		3B2F69AF292142120033A8B9 /* FiltersCollectionOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2F69AE292142120033A8B9 /* FiltersCollectionOutput.swift */; };
-		3B2F69B3292146120033A8B9 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2F69B1292146120033A8B9 /* IngredientsTableViewCell.swift */; };
-		3B2F69B4292146120033A8B9 /* IngredientsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2F69B2292146120033A8B9 /* IngredientsTableViewCell.xib */; };
 		3B2F69B929214B060033A8B9 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2F69B729214B060033A8B9 /* IngredientTableViewCell.swift */; };
 		3B2F69BA29214B060033A8B9 /* IngredientTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2F69B829214B060033A8B9 /* IngredientTableViewCell.xib */; };
-		3B2F69BD292151C50033A8B9 /* IngredientsOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2F69BC292151C50033A8B9 /* IngredientsOutput.swift */; };
-		3B2F69C3292156BE0033A8B9 /* PreparationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2F69C1292156BE0033A8B9 /* PreparationsTableViewCell.swift */; };
-		3B2F69C4292156BE0033A8B9 /* PreparationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2F69C2292156BE0033A8B9 /* PreparationsTableViewCell.xib */; };
 		3B2F69C8292157430033A8B9 /* PreparationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2F69C6292157430033A8B9 /* PreparationTableViewCell.swift */; };
 		3B2F69C9292157430033A8B9 /* PreparationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2F69C7292157430033A8B9 /* PreparationTableViewCell.xib */; };
-		3B2F69CC29215A1F0033A8B9 /* PreparationOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2F69CB29215A1F0033A8B9 /* PreparationOutput.swift */; };
 		3B3BB68928E5B734006431F0 /* FavoriteModuleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3BB68828E5B734006431F0 /* FavoriteModuleEntity.swift */; };
 		3B4A447728E8B55B00E0A8F5 /* PopularCollectionOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A447628E8B55B00E0A8F5 /* PopularCollectionOutput.swift */; };
 		3B53B6C828F0B67A001176FE /* DetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B6C628F0B67A001176FE /* DetailImageTableViewCell.swift */; };
@@ -116,16 +110,10 @@
 		3B1C9E2128DA145D00A6441E /* PopularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionViewCell.swift; sourceTree = "<group>"; };
 		3B1C9E2228DA145D00A6441E /* PopularCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCollectionViewCell.xib; sourceTree = "<group>"; };
 		3B2F69AE292142120033A8B9 /* FiltersCollectionOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersCollectionOutput.swift; sourceTree = "<group>"; };
-		3B2F69B1292146120033A8B9 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
-		3B2F69B2292146120033A8B9 /* IngredientsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsTableViewCell.xib; sourceTree = "<group>"; };
 		3B2F69B729214B060033A8B9 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		3B2F69B829214B060033A8B9 /* IngredientTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientTableViewCell.xib; sourceTree = "<group>"; };
-		3B2F69BC292151C50033A8B9 /* IngredientsOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsOutput.swift; sourceTree = "<group>"; };
-		3B2F69C1292156BE0033A8B9 /* PreparationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationsTableViewCell.swift; sourceTree = "<group>"; };
-		3B2F69C2292156BE0033A8B9 /* PreparationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreparationsTableViewCell.xib; sourceTree = "<group>"; };
 		3B2F69C6292157430033A8B9 /* PreparationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationTableViewCell.swift; sourceTree = "<group>"; };
 		3B2F69C7292157430033A8B9 /* PreparationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreparationTableViewCell.xib; sourceTree = "<group>"; };
-		3B2F69CB29215A1F0033A8B9 /* PreparationOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationOutput.swift; sourceTree = "<group>"; };
 		3B3BB68828E5B734006431F0 /* FavoriteModuleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModuleEntity.swift; sourceTree = "<group>"; };
 		3B4A447628E8B55B00E0A8F5 /* PopularCollectionOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionOutput.swift; sourceTree = "<group>"; };
 		3B53B6C628F0B67A001176FE /* DetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -334,18 +322,7 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		3B2F69B0292145F50033A8B9 /* IngredientsTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				3B2F69BB292151AF0033A8B9 /* Protocols */,
-				3B2F69B629214AF00033A8B9 /* IngredientTableViewCell */,
-				3B2F69B1292146120033A8B9 /* IngredientsTableViewCell.swift */,
-				3B2F69B2292146120033A8B9 /* IngredientsTableViewCell.xib */,
-			);
-			path = IngredientsTableViewCell;
-			sourceTree = "<group>";
-		};
-		3B2F69B629214AF00033A8B9 /* IngredientTableViewCell */ = {
+		3B2F69B0292145F50033A8B9 /* IngredientTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				3B2F69B729214B060033A8B9 /* IngredientTableViewCell.swift */,
@@ -354,40 +331,13 @@
 			path = IngredientTableViewCell;
 			sourceTree = "<group>";
 		};
-		3B2F69BB292151AF0033A8B9 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				3B2F69BC292151C50033A8B9 /* IngredientsOutput.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		3B2F69BE292156880033A8B9 /* PreparationsTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				3B2F69CA29215A0A0033A8B9 /* Protocols */,
-				3B2F69C5292157310033A8B9 /* PreparationTableViewCell */,
-				3B2F69C1292156BE0033A8B9 /* PreparationsTableViewCell.swift */,
-				3B2F69C2292156BE0033A8B9 /* PreparationsTableViewCell.xib */,
-			);
-			path = PreparationsTableViewCell;
-			sourceTree = "<group>";
-		};
-		3B2F69C5292157310033A8B9 /* PreparationTableViewCell */ = {
+		3B2F69BE292156880033A8B9 /* PreparationTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				3B2F69C6292157430033A8B9 /* PreparationTableViewCell.swift */,
 				3B2F69C7292157430033A8B9 /* PreparationTableViewCell.xib */,
 			);
 			path = PreparationTableViewCell;
-			sourceTree = "<group>";
-		};
-		3B2F69CA29215A0A0033A8B9 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				3B2F69CB29215A1F0033A8B9 /* PreparationOutput.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		3B3BB68428E5B6C8006431F0 /* Interactor */ = {
@@ -567,8 +517,8 @@
 		3B769E2228EDD48B001A1B6C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3B2F69BE292156880033A8B9 /* PreparationsTableViewCell */,
-				3B2F69B0292145F50033A8B9 /* IngredientsTableViewCell */,
+				3B2F69BE292156880033A8B9 /* PreparationTableViewCell */,
+				3B2F69B0292145F50033A8B9 /* IngredientTableViewCell */,
 				3B048EFC2915469400D3ABF8 /* DescriptionTableViewCell */,
 				3B5D8ED428FFDC5800F5FB4B /* FilterDetailTableViewCell */,
 				3B769E2328EDD491001A1B6C /* DetailImageTableViewCell */,
@@ -932,14 +882,12 @@
 			files = (
 				3B92BD3828D895B100A6DBAA /* LaunchScreen.storyboard in Resources */,
 				3B044D0E28ECAEE00045047B /* DetailViewController.xib in Resources */,
-				3B2F69B4292146120033A8B9 /* IngredientsTableViewCell.xib in Resources */,
 				3B6B738828DA6C2B00FAA386 /* RecommendCollectionViewCell.xib in Resources */,
 				3B1C9E2428DA145D00A6441E /* PopularCollectionViewCell.xib in Resources */,
 				3B6B737E28DA65C700FAA386 /* RecommendTableViewCell.xib in Resources */,
 				3B048F00291546B700D3ABF8 /* DescriptionTableViewCell.xib in Resources */,
 				3B2F69BA29214B060033A8B9 /* IngredientTableViewCell.xib in Resources */,
 				3B6B738328DA690600FAA386 /* RecommendCollectionTableViewCell.xib in Resources */,
-				3B2F69C4292156BE0033A8B9 /* PreparationsTableViewCell.xib in Resources */,
 				3B1C9E1E28DA11D300A6441E /* MainViewController.xib in Resources */,
 				3B92BD5928D8993E00A6DBAA /* SettingsViewController.xib in Resources */,
 				3B2F69C9292157430033A8B9 /* PreparationTableViewCell.xib in Resources */,
@@ -1041,7 +989,6 @@
 				3B048EFF291546B700D3ABF8 /* DescriptionTableViewCell.swift in Sources */,
 				3BF7FD5628E0BCFF004ECFDE /* MainViewOutput.swift in Sources */,
 				3BDCB8FD28F2E5DD0027A8F6 /* DetailModuleProductsEntity.swift in Sources */,
-				3B2F69BD292151C50033A8B9 /* IngredientsOutput.swift in Sources */,
 				3BF7FD4F28E0B721004ECFDE /* MainModuleRouter.swift in Sources */,
 				3B6B738228DA690600FAA386 /* RecommendCollectionTableViewCell.swift in Sources */,
 				3B59C62828E8A5FD00C7001B /* FavoriteViewInput.swift in Sources */,
@@ -1057,12 +1004,9 @@
 				3B5D8ED728FFDC7A00F5FB4B /* FilterDetailTableViewCell.swift in Sources */,
 				3B6B737328DA5CF500FAA386 /* NavigationTableViewCell.swift in Sources */,
 				3B044D1B28ECB1D60045047B /* DetailModuleInteractorOutput.swift in Sources */,
-				3B2F69C3292156BE0033A8B9 /* PreparationsTableViewCell.swift in Sources */,
 				3B044D1628ECB1380045047B /* DetailModuleRouter.swift in Sources */,
 				3BB5E53F28F1E9AF002B15EC /* NetworkService.swift in Sources */,
 				3BDA88FE28E1E80E00E50897 /* PopularInput.swift in Sources */,
-				3B2F69CC29215A1F0033A8B9 /* PreparationOutput.swift in Sources */,
-				3B2F69B3292146120033A8B9 /* IngredientsTableViewCell.swift in Sources */,
 				3B044D2028ECB22E0045047B /* DetailModuleViewOutput.swift in Sources */,
 				3BDCB90428F34D4D0027A8F6 /* CustomTransition.swift in Sources */,
 				3B53B6CE28F0CAC9001176FE /* DetailImageInput.swift in Sources */,

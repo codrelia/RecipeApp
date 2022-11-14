@@ -1,4 +1,5 @@
 import UIKit
+import SkeletonView
 
 class DetailViewController: UIViewController {
     
@@ -7,14 +8,23 @@ class DetailViewController: UIViewController {
     private var errorMessage: ErrorMessage?
     
     // MARK: - Protocols
-    var viewOutput: DetailModuleViewOutput?
+    weak var viewOutput: DetailModuleViewOutput?
     
     // MARK: - Properties
     private var isReload: Bool = false
     private var tappedItem: Int = 0
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+    var heightStatusBar: CGFloat = 0.0 {
+        didSet {
+            if oldValue > 0.0 {
+                heightStatusBar = oldValue
+            }
+        }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        heightStatusBar = UIApplication.shared.statusBarFrame.height
+        return true
     }
 
     // MARK: - Lyfecycle
@@ -31,17 +41,17 @@ class DetailViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
-        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        self.tableView.contentInset = UIEdgeInsets(top: -heightStatusBar, left: 0, bottom: 0, right: 0)
     }
     
     override func viewDidLayoutSubviews() {
-        let height = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-        self.tableView.contentInset = UIEdgeInsets(top: -height, left: 0, bottom: 0, right: 0)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    
     }
     
 }
@@ -55,13 +65,12 @@ private extension DetailViewController {
     
     func configureTable() {
         tableView.backgroundColor = .white
-        tableView.separatorStyle = .none
         
         tableView.register(UINib(nibName: "\(DetailImageTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(DetailImageTableViewCell.self)")
         tableView.register(UINib(nibName: "\(FilterDetailTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(FilterDetailTableViewCell.self)")
         tableView.register(UINib(nibName: "\(DescriptionTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(DescriptionTableViewCell.self)")
-        tableView.register(UINib(nibName: "\(IngredientsTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(IngredientsTableViewCell.self)")
-        tableView.register(UINib(nibName: "\(PreparationsTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(PreparationsTableViewCell.self)")
+        tableView.register(UINib(nibName: "\(IngredientTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(IngredientTableViewCell.self)")
+        tableView.register(UINib(nibName: "\(PreparationTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(PreparationTableViewCell.self)")
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -75,14 +84,14 @@ private extension DetailViewController {
 
 extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var temp = 3
-        /*if tappedItem == 0 {
+        var temp = 2
+        if tappedItem == 0 {
             temp += 1
         } else if tappedItem == 1 {
-            temp += viewOutput?.getRequestIngredientsInfo()?.products.count ?? 0
+            temp += viewOutput?.getRequestIngredientsInfo()?.products.count ?? 5
         } else if tappedItem == 2 {
-            temp += viewOutput?.getRequestPreparationInfo()?.preparation.count ?? 0
-        }*/
+            temp += viewOutput?.getRequestPreparationInfo()?.preparation.count ?? 1
+        }
         return temp
     }
     
@@ -123,36 +132,45 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             cell.setOutput(output: self)
-            
             return cell
-        case 2:
-            switch tappedItem {
-            case 0:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(DescriptionTableViewCell.self)", for: indexPath) as? DescriptionTableViewCell else {
-                    return UITableViewCell()
+        default:
+            if tappedItem == 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(DescriptionTableViewCell.self)", for: indexPath) as? DescriptionTableViewCell else { return UITableViewCell() }
+                guard let item = viewOutput?.getRequestDescriptionInfo() else {
+                    cell.isLoad = true
+                    return cell
                 }
-                guard let item = viewOutput?.getRequestDescriptionInfo() else { return UITableViewCell() }
                 cell.descriptions = item.descriptionText
+                cell.fats = item.caloricContent[0].fat
                 cell.protein = item.caloricContent[0].protein
                 cell.carbohydrates = item.caloricContent[0].carbohydrates
-                cell.fats = item.caloricContent[0].fat
+                cell.isLoad = false
                 return cell
-            case 1:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(IngredientsTableViewCell.self)", for: indexPath) as? IngredientsTableViewCell else {
-                    return UITableViewCell()
+            } else if tappedItem == 1 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(IngredientTableViewCell.self)", for: indexPath) as? IngredientTableViewCell else {
+                    return UITableViewCell() }
+                guard let item = viewOutput?.getRequestIngredientsInfo() else {
+                    cell.isLoad = true
+                    return cell
+                    
                 }
-                cell.setOutput(output: self)
+                cell.name = item.products[indexPath.row - 2].nameImgredient
+                let temp = item.products[indexPath.row - 2].counts == 0 ? "" : String(item.products[indexPath.row - 2].counts)
+                cell.measurent = temp + " " + item.products[indexPath.row - 2].measurement[0].nameMeasurement
+                cell.isLoad = false
                 return cell
-            case 2:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(PreparationsTableViewCell.self)", for: indexPath) as? PreparationsTableViewCell else {
-                    return UITableViewCell()
+            } else if tappedItem == 2 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(PreparationTableViewCell.self)", for: indexPath) as? PreparationTableViewCell else { return UITableViewCell() }
+                guard let item = viewOutput?.getRequestPreparationInfo() else {
+                    cell.isLoad = true
+                    return cell
                 }
-                cell.setOutput(output: self)
+                cell.step = item.preparation[indexPath.row - 2].step
+                cell.image = item.preparation[indexPath.row - 2].dataImage
+                cell.descriptionText = item.preparation[indexPath.row - 2].preparationDescription
+                cell.isLoad = false
                 return cell
-            default:
-                return UITableViewCell()
             }
-        default:
             return UITableViewCell()
         }
     }
@@ -162,14 +180,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         case 0: return 400.0
         case 1: return 32.0
         default:
-            switch tappedItem {
-            case 1:
-                return CGFloat(((viewOutput?.getRequestIngredientsInfo()?.products.count) ?? 0) * 40)
-            case 2:
-                return 432.0
-            default:
-                return UITableView.automaticDimension
-            }
+            return UITableView.automaticDimension
         }
     }
     
@@ -179,6 +190,27 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.frame.origin.y = scrollView.contentOffset.y
                 let originalHeight: CGFloat = tableView(tableView, heightForRowAt: IndexPath(row: 0, section: 0))
                 cell.frame.size.height = originalHeight + scrollView.contentOffset.y * (-1.0)
+            }
+        }
+    }
+}
+
+// MARK: - SkeletonTableViewDataSource
+
+extension DetailViewController: SkeletonTableViewDataSource {
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        switch indexPath.row {
+        case 0: return "\(DetailImageTableViewCell.self)"
+        case 1: return "\(FilterDetailTableViewCell.self)"
+        default:
+            if tappedItem == 0 {
+                return "\(DescriptionTableViewCell.self)"
+            } else if tappedItem == 1 {
+                return "\(IngredientTableViewCell.self)"
+            } else if tappedItem == 2 {
+                return "\(PreparationTableViewCell.self)"
+            } else {
+                return ""
             }
         }
     }
@@ -207,7 +239,7 @@ extension DetailViewController: DetailModuleViewInput {
     
     func reloadInformation() {
         DispatchQueue.main.async {
-            self.tableView.reloadRows(at: [IndexPath(row: 2, section: 0)], with: .automatic)
+            self.tableView.reloadData()
         }
     }
 }
@@ -217,6 +249,10 @@ extension DetailViewController: DetailModuleViewInput {
 extension DetailViewController: DetailImageOutput {
     func returnToBackScreen() {
         viewOutput?.returnToBackScreen()
+    }
+    
+    func actionsWithRecipe() {
+        viewOutput?.actionsWithRecipe()
     }
 }
 
@@ -361,38 +397,9 @@ extension DetailViewController: AnimationProtocol {
 
 extension DetailViewController: FiltersCollectionOutput {
     func tapOnFiltersButton(itemCount: Int) {
-        if self.tappedItem == 2 {
-            guard let cell = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? PreparationsTableViewCell else { return }
-            print(cell.tableView.frame.height)
-        }
         tappedItem = itemCount
         DispatchQueue.main.async {
-            //self.tableView.reloadData()
-            self.tableView.reloadRows(at: [IndexPath(row: 2, section: 0)], with: .automatic)
+            self.tableView.reloadData()
         }
-    }
-}
-
-// MARK: - IngredientsOutput
-
-extension DetailViewController: IngredientsOutput {
-    func getRequest() -> DetailModuleProductsEntity.Item? {
-        viewOutput?.getRequestIngredientsInfo()
-    }
-    
-    func getCountOfCells() -> Int {
-        viewOutput?.getRequestIngredientsInfo()?.products.count ?? 0
-    }
-}
-
-// MARK: - PreparationOutput
-
-extension DetailViewController: PreparationOutput {
-    func getRequest() -> DetailModulePreparationEntity.Item? {
-        viewOutput?.getRequestPreparationInfo()
-    }
-    
-    func getCount() -> Int {
-        viewOutput?.getRequestPreparationInfo()?.preparation.count ?? 0
     }
 }

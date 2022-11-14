@@ -38,5 +38,7 @@ private extension FilterDetailTableViewCell {
         addSubview(filter)
         
         filter.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+        
+        separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10000)
     }
 }

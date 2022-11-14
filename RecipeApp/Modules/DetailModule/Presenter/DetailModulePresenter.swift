@@ -5,27 +5,27 @@ class DetailModulePresenter: UserDefaultsService {
     // MARK: - VIPERs elements
     
     var interactorInput: DetailModuleInteractorInput?
-    var view: DetailViewController?
     weak var viewInput: DetailModuleViewInput?
-    var routerInput: DetailRouterInput?
+    weak var routerInput: DetailRouterInput?
     
     
     // MARK: - Initialization
     
-    init(view: DetailViewController, datas: (Data, UIImage)) {
+    init(datas: (Data, UIImage)) {
         super.init()
         self.interactorInput = DetailModuleInteractor(interactorOutput: self)
         self.interactorInput?.setGeneralInfo(data: datas.0, image: datas.1)
-        self.view = view
-        self.viewInput = view
-        
-        self.viewInput?.setOutput(viewOutput: self)
     }
     
     // MARK: - Methods
     
     func setRouterInput(_ routerInput: DetailRouterInput) {
         self.routerInput = routerInput
+    }
+    
+    func setViewInput(_ viewInput: DetailModuleViewInput) {
+        self.viewInput = viewInput
+        self.viewInput?.setOutput(viewOutput: self)
     }
     
 }
@@ -96,6 +96,15 @@ extension DetailModulePresenter: DetailModuleViewOutput {
     
     func getGeneralInfo() -> DetailModuleGeneralInfoEntity.Item? {
         interactorInput?.getGeneralInfo()
+    }
+    
+    func actionsWithRecipe() {
+        guard let id = interactorInput?.getID() else { return }
+        if isInUserDefaults(id) {
+            deleteRecipeInUserDefaults(id)
+        } else {
+            addRecipeInUserDefaults(id)
+        }
     }
 }
 

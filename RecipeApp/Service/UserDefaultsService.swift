@@ -38,6 +38,11 @@ class UserDefaultsService {
         defaults.set(favoritesRecipes == [] ? nil : favoritesRecipes, forKey: UserDefaultsKeys.idRecipes.rawValue)
     }
     
+    func reloadData() {
+        let recipes = UserDefaultsService.getDataFromUserDefaults(UserDefaultsKeys.idRecipes.rawValue) as? [Int]
+        favoritesRecipes = (recipes == nil ? [] : recipes!)
+    }
+    
     static func getDataFromUserDefaults(_ key: String) -> Any? {
         return UserDefaults.standard.array(forKey: key)
     }

@@ -28,6 +28,20 @@ class PreparationTableViewCell: UITableViewCell {
         }
     }
     
+    var isLoad: Bool = false {
+        didSet {
+            if isLoad {
+                preparationImageView.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: loadColor, secondaryColor: anotherLoadColor), transition: .crossDissolve(1.0))
+                stepLabel.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: loadColor, secondaryColor: anotherLoadColor), transition: .crossDissolve(1.0))
+                descriptionLabel.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: loadColor, secondaryColor: anotherLoadColor), transition: .crossDissolve(1.0))
+            } else {
+                preparationImageView.hideSkeleton()
+                stepLabel.hideSkeleton()
+                descriptionLabel.hideSkeleton()
+            }
+        }
+    }
+    
     // MARK: - Initialization
     
     override func awakeFromNib() {

@@ -8,4 +8,5 @@ protocol DetailModuleViewOutput: AnyObject {
     func getFullRecipe() -> DetailModuleEntity.Info?
     func getGeneralInfo() -> DetailModuleGeneralInfoEntity.Item?
     func getFavoritesRecipes() -> [Int]
+    func actionsWithRecipe()
 }

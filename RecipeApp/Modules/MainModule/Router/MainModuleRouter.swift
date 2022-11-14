@@ -4,6 +4,7 @@ import UIKit
 class MainModuleRouter {
     var view: MainViewController?
     var presenter: MainModulePresenter?
+    var detailRouter: DetailModuleRouter?
     
     init() {
         self.view = MainViewController()
@@ -19,8 +20,9 @@ extension MainModuleRouter: MainModuleRouterInput {
         guard data.0 != nil && data.1 != nil else {
             return
         }
-        let router = DetailModuleRouter(data: (data.0!, data.1!))
-        self.view?.navigationController?.pushViewController(router.view!, animated: true)
+        detailRouter = DetailModuleRouter(data: (data.0!, data.1!))
+        guard let detailRouter = detailRouter else { return }
+        self.view?.navigationController?.pushViewController(detailRouter.view, animated: true)
         
     }
 }

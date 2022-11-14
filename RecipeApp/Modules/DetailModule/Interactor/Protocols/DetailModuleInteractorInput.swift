@@ -8,4 +8,5 @@ protocol DetailModuleInteractorInput: AnyObject {
     func getRequestDescriptionInfo(completion: @escaping (Result<DetailModuleDescriptionEntity.Item, Error>) -> ())
     func getRequestIngredientsInfo(completion: @escaping (Result<DetailModuleProductsEntity.Item, Error>) -> ())
     func getRequestPreparationInfo(completion: @escaping (Result<DetailModulePreparationEntity.Item, Error>) -> ())
+    func getID() -> Int?
 }

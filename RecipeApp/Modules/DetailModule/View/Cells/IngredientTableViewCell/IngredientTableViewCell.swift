@@ -20,6 +20,18 @@ class IngredientTableViewCell: UITableViewCell {
         }
     }
     
+    var isLoad: Bool = false {
+        didSet {
+            if isLoad {
+                nameLabel.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: loadColor, secondaryColor: anotherLoadColor), transition: .crossDissolve(1.0))
+                measurentLabel.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: loadColor, secondaryColor: anotherLoadColor), transition: .crossDissolve(1.0))
+            } else {
+                nameLabel.hideSkeleton()
+                measurentLabel.hideSkeleton()
+            }
+        }
+    }
+    
     // MARK: - Initialization
     
     override func awakeFromNib() {
@@ -36,7 +48,6 @@ private extension IngredientTableViewCell {
     func configureCell() {
         nameLabel.font = .systemFont(ofSize: 14.0, weight: .medium)
         nameLabel.textColor = .black
-        nameLabel.text = "-"
         
         measurentLabel.font = .systemFont(ofSize: 12.0, weight: .medium)
         measurentLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)

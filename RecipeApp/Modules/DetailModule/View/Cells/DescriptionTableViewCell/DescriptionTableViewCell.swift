@@ -35,6 +35,22 @@ class DescriptionTableViewCell: UITableViewCell {
         }
     }
     
+    var isLoad: Bool = false {
+        didSet {
+            if isLoad {
+                descriptionText.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: loadColor, secondaryColor: anotherLoadColor), transition: .crossDissolve(1.0))
+                proteinLabel.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: loadColor, secondaryColor: anotherLoadColor), transition: .crossDissolve(1.0))
+                fatsLabel.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: loadColor, secondaryColor: anotherLoadColor), transition: .crossDissolve(1.0))
+                carbohydratesLabel.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: loadColor, secondaryColor: anotherLoadColor), transition: .crossDissolve(1.0))
+            } else {
+                descriptionText.hideSkeleton()
+                proteinLabel.hideSkeleton()
+                fatsLabel.hideSkeleton()
+                carbohydratesLabel.hideSkeleton()
+            }
+        }
+    }
+    
     // MARK: - Initialization
     
     override func awakeFromNib() {
@@ -61,6 +77,6 @@ private extension DescriptionTableViewCell {
         fatsLabel.textColor = .black
         carbohydratesLabel.font = .systemFont(ofSize: 14.0, weight: .regular)
         carbohydratesLabel.textColor = .black
-        
+        separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10000)
     }
 }

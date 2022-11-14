@@ -90,6 +90,12 @@ class DetailImageTableViewCell: UITableViewCell {
     @IBAction func tapOnBackButton(_ sender: Any) {
         output?.returnToBackScreen()
     }
+    
+    
+    @IBAction func tapOnFavoriteButton(_ sender: Any) {
+        animationButton()
+        output?.actionsWithRecipe()
+    }
 }
 
 // MARK: - Private methods
@@ -133,6 +139,19 @@ private extension DetailImageTableViewCell {
         ratingLabel.textColor = mainColor
         
         separatorImageView.image = separatorImage
+        separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10000)
         
+    }
+    
+    func animationButton() {
+        UIView.animate(withDuration: 0.1, delay: 0.0) {
+            self.favoriteButton.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        } completion: { _ in
+            UIView.animate(withDuration: 0.1, delay: 0.0) {
+                self.favoriteButton.transform = CGAffineTransform.identity
+                self.isTapped.toggle()
+            } completion: { _ in
+            }
+        }
     }
 }

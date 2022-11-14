@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 class DetailModuleInteractor: NetworkService {
-    var interactorOutput: DetailModuleInteractorOutput?
+    weak var interactorOutput: DetailModuleInteractorOutput?
     var entity: DetailModuleEntity.Info? {
         didSet {
             interactorOutput?.reloadDataInTable()
@@ -15,19 +15,19 @@ class DetailModuleInteractor: NetworkService {
     }
     var descriptionEntity: DetailModuleDescriptionEntity.Item? {
         didSet {
-            interactorOutput?.reloadInformation()
+            interactorOutput?.reloadDataInTable()
         }
     }
     
     var ingredientsEntity: DetailModuleProductsEntity.Item? {
         didSet {
-            interactorOutput?.reloadInformation()
+            interactorOutput?.reloadDataInTable()
         }
     }
     
     var preparationEntity: DetailModulePreparationEntity.Item? {
         didSet {
-            interactorOutput?.reloadInformation()
+            interactorOutput?.reloadDataInTable()
         }
     }
     
@@ -145,4 +145,10 @@ extension DetailModuleInteractor: DetailModuleInteractorInput {
             }
         }
     }
+    
+    func getID() -> Int? {
+        guard let id = generalEntity?.idRecipe else { return nil }
+        return id
+    }
 }
+

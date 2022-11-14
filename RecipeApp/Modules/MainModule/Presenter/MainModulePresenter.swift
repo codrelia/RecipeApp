@@ -79,6 +79,7 @@ extension MainModulePresenter: MainViewOutput {
     }
     
     func getFavoritesRecipes() -> [Int] {
+        reloadData()
         return favoritesRecipes
     }
     

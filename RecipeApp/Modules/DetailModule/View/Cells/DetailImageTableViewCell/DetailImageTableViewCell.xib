@@ -29,6 +29,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title=""/>
+                        <connections>
+                            <action selector="tapOnFavoriteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HQH-FC-DIe"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nic-bP-DLI">
                         <rect key="frame" x="12" y="80" width="28" height="28"/>
