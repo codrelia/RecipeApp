@@ -101,6 +101,7 @@ extension MainViewController: SkeletonTableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             cell.title = "Популярные\nрецепты"
+            cell.setOutput(self)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(PopularTableViewCell.self)")
@@ -176,7 +177,9 @@ extension MainViewController: MainViewInput {
 extension MainViewController: PopularOutput {
     
     func pushDetailScreen(id: Int) {
-        viewOutput?.pushDetailScreen(id: id)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.viewOutput?.pushDetailScreen(id: id)
+        }
     }
     
     func getFavoriteRecipes() -> [Int] {
@@ -209,18 +212,22 @@ extension MainViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         let transition: UIViewControllerAnimatedTransitioning?
-        
-        guard let from = fromVC as? AnimationProtocol, let to = toVC as? AnimationProtocol else {
-            return nil
-        }
-        
+
         switch (fromVC, toVC) {
         case (_, is DetailViewController):
-            let moveElementsTransition = CustomTransition()
+            let moveElementsTransition = TransitionWithDetail()
             moveElementsTransition.operation = .push
             transition = moveElementsTransition
         case (is DetailViewController, _):
-            let moveElementsTransition = CustomTransition()
+            let moveElementsTransition = TransitionWithDetail()
+            moveElementsTransition.operation = .pop
+            transition = moveElementsTransition
+        case (_, is SearchModuleViewController):
+            let moveElementsTransition = TransitionWithSearch()
+            moveElementsTransition.operation = .push
+            transition = moveElementsTransition
+        case (is SearchModuleViewController, _):
+            let moveElementsTransition = TransitionWithSearch()
             moveElementsTransition.operation = .pop
             transition = moveElementsTransition
         default:
@@ -231,9 +238,9 @@ extension MainViewController: UINavigationControllerDelegate {
     }
 }
 
-// MARK: - Extension AnimationProtocol
+// MARK: - Extension AnimationDetailProtocol
 
-extension MainViewController: AnimationProtocol {
+extension MainViewController: AnimationDetailProtocol {
     func viewsToAnimate() -> [UIView] {
         var mainCell: PopularCollectionViewCell
         guard let cell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? PopularTableViewCell else {
@@ -374,6 +381,7 @@ extension MainViewController: AnimationProtocol {
             let temp = UILabel()
             temp.text = label.text
             temp.attributedText = label.attributedText
+            temp.attributedText = label.attributedText
             temp.frame = label.frame
             temp.textColor = .black
             return temp
@@ -388,6 +396,39 @@ extension MainViewController: AnimationProtocol {
             return UIView()
         }
     }
+}
+
+// MARK: - Extension AnimationSearchProtocol
+extension MainViewController: AnimationSearchProtocol {
+    func buttonToAnimate() -> [UIView] {
+        guard let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? NavigationTableViewCell else {
+            return []
+        }
+        print(cell.getSearchButton().frame)
+        return [cell.getSearchButton()]
+    }
     
-    
+    func copyButton(_ subView: UIView) -> UIView {
+        let button = subView as! UIButton
+        let temp = UIButton()
+        temp.setImage(button.image(for: .normal), for: .normal)
+        temp.tintColor = mainColor
+        temp.frame = button.frame
+        temp.backgroundColor = .clear
+        temp.contentMode = .scaleAspectFill
+        return temp
+    }
+}
+
+// MARK: - NavigationOutput
+
+extension MainViewController: NavigationOutput {
+    func pushSearchScreen() {
+        DispatchQueue.main.async {
+            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.viewOutput?.pushSearchScreen()
+        }
+    }
 }

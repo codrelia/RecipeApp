@@ -110,7 +110,7 @@ private extension DetailImageTableViewCell {
         
         backButton.contentMode = .scaleAspectFill
         backButton.tintColor = mainColor
-        backButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+        backButton.setImage(backDownImage, for: .normal)
         backButton.backgroundColor = .white
         backButton.layer.cornerRadius = 15
         

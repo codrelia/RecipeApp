@@ -258,7 +258,7 @@ extension DetailViewController: DetailImageOutput {
 
 // MARK: - AnimationProtocol
 
-extension DetailViewController: AnimationProtocol {
+extension DetailViewController: AnimationDetailProtocol {
     func viewsToAnimate() -> [UIView] {
         guard let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? DetailImageTableViewCell else {
             return []

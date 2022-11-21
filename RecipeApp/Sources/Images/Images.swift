@@ -23,3 +23,8 @@ let ratingIconImage: UIImage? = .init(named: "rating")
 // MARK: - DetailImageTableViewCell
 
 let separatorImage: UIImage? = .init(named: "separator")
+let backDownImage = UIImage(systemName: "chevron.down")
+
+// MARK: -
+
+let backLeftImage = UIImage(systemName: "chevron.left")

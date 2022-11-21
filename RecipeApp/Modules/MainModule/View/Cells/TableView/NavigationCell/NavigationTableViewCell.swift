@@ -10,6 +10,8 @@ class NavigationTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
+    weak var navigationOutput: NavigationOutput?
+    
     var title: String = "" {
         didSet {
             headerLabel.text = title
@@ -31,6 +33,21 @@ class NavigationTableViewCell: UITableViewCell {
         configureCell()
     }
     
+    // MARK: - Actions
+    
+    @IBAction func tapOnSearchButton(_ sender: Any) {
+        navigationOutput?.pushSearchScreen()
+    }
+    
+    // MARK: - Methods
+    
+    func setOutput(_ navigationOutput: NavigationOutput) {
+        self.navigationOutput = navigationOutput
+    }
+    
+    func getSearchButton() -> UIButton {
+        return searchButton
+    }
 }
 
 // MARK: - Private methods
@@ -45,6 +62,7 @@ private extension NavigationTableViewCell {
         
         searchButton.tintColor = mainColor
         searchButton.setImage(searchIconImage, for: .normal)
+        searchButton.backgroundColor = .clear
         
         profileButton.tintColor = mainColor
         profileButton.setImage(profileIconImage, for: .normal)

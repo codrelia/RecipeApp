@@ -92,4 +92,8 @@ extension MainModulePresenter: MainViewOutput {
         }
         routerInput?.pushDetailScreen(data: result)
     }
+    
+    func pushSearchScreen() {
+        routerInput?.pushSearchScreen()
+    }
 }

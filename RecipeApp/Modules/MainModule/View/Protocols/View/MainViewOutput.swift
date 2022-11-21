@@ -11,4 +11,5 @@ protocol MainViewOutput: AnyObject {
     func getFavoritesRecipes() -> [Int]
     
     func pushDetailScreen(id: Int)
+    func pushSearchScreen()
 }

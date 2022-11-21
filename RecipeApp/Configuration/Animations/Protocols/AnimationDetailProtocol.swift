@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-@objc protocol AnimationProtocol {
+@objc protocol AnimationDetailProtocol {
     var view: UIView! { get set }
     
     func viewsToAnimate() -> [UIView]

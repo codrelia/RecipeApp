@@ -1,6 +1,6 @@
 import UIKit
 
-class CustomTransition: NSObject, UIViewControllerAnimatedTransitioning {
+class TransitionWithDetail: NSObject, UIViewControllerAnimatedTransitioning {
     
     let animationDuration = 0.3
     var operation: UINavigationController.Operation = .push
@@ -13,8 +13,8 @@ class CustomTransition: NSObject, UIViewControllerAnimatedTransitioning {
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         storedContext = transitionContext
         
-        let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as! AnimationProtocol
-        let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as! AnimationProtocol
+        let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as! AnimationDetailProtocol
+        let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as! AnimationDetailProtocol
         
         let containerView = transitionContext.containerView
         
@@ -27,9 +27,6 @@ class CustomTransition: NSObject, UIViewControllerAnimatedTransitioning {
         
         toViewController.view.setNeedsLayout()
         toViewController.view.layoutIfNeeded()
-        
-        //    fromViewController.view.setNeedsLayout()
-        //    fromViewController.view.layoutIfNeeded()
         
         let fromViews = fromViewController.viewsToAnimate()
         let toViews = toViewController.viewsToAnimate()
