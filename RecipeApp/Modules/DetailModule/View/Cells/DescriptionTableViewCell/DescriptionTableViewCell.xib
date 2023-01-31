@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="206" id="KGk-i7-Jjw" customClass="DescriptionTableViewCell" customModule="RecipeApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="482" height="206"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="482" height="206"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSO-wY-gsx">
+                        <rect key="frame" x="20" y="15.999999999999998" width="442" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Калорийность" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dg-Z1-Yyy">
+                        <rect key="frame" x="20" y="52.333333333333336" width="442" height="19.333333333333336"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Белки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djq-SU-hgm">
+                        <rect key="frame" x="20.000000000000004" y="79.666666666666671" width="40.333333333333343" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNu-Di-gvN">
+                        <rect key="frame" x="70.333333333333329" y="77.666666666666671" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Жиры" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEC-Wc-IKe">
+                        <rect key="frame" x="20.000000000000004" y="104.66666666666667" width="41.333333333333343" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLl-uL-Ct6">
+                        <rect key="frame" x="71.333333333333329" y="102.66666666666667" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Углеводы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQO-yg-czJ">
+                        <rect key="frame" x="20" y="129.66666666666666" width="64.333333333333329" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SX3-4J-qpF">
+                        <rect key="frame" x="94.333333333333329" y="127.66666666666669" width="41.999999999999986" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wQO-yg-czJ" secondAttribute="bottom" constant="40" id="0D2-ZN-uFU"/>
+                    <constraint firstItem="WEC-Wc-IKe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="1hH-Ct-5ue"/>
+                    <constraint firstItem="Djq-SU-hgm" firstAttribute="top" secondItem="2dg-Z1-Yyy" secondAttribute="bottom" constant="8" id="4kU-1H-Hfr"/>
+                    <constraint firstItem="SX3-4J-qpF" firstAttribute="leading" secondItem="wQO-yg-czJ" secondAttribute="trailing" constant="10" id="9HX-ae-Dgy"/>
+                    <constraint firstItem="LLl-uL-Ct6" firstAttribute="centerY" secondItem="WEC-Wc-IKe" secondAttribute="centerY" id="9P6-zB-hWM"/>
+                    <constraint firstItem="wQO-yg-czJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="IaS-xX-MRJ"/>
+                    <constraint firstAttribute="trailing" secondItem="2dg-Z1-Yyy" secondAttribute="trailing" constant="20" id="MgJ-1e-dyo"/>
+                    <constraint firstItem="JSO-wY-gsx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="NFc-2Y-EZu"/>
+                    <constraint firstItem="JSO-wY-gsx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="PCu-Qi-1G8"/>
+                    <constraint firstItem="WEC-Wc-IKe" firstAttribute="top" secondItem="Djq-SU-hgm" secondAttribute="bottom" constant="8" id="REc-YW-NQE"/>
+                    <constraint firstItem="SX3-4J-qpF" firstAttribute="centerY" secondItem="wQO-yg-czJ" secondAttribute="centerY" id="WSR-z7-lXX"/>
+                    <constraint firstItem="Djq-SU-hgm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="igC-4D-H7R"/>
+                    <constraint firstItem="2dg-Z1-Yyy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="nQU-Pw-DNH"/>
+                    <constraint firstItem="LLl-uL-Ct6" firstAttribute="leading" secondItem="WEC-Wc-IKe" secondAttribute="trailing" constant="10" id="nTE-P2-zhF"/>
+                    <constraint firstItem="wQO-yg-czJ" firstAttribute="top" secondItem="WEC-Wc-IKe" secondAttribute="bottom" constant="8" id="oeT-wG-ieR"/>
+                    <constraint firstItem="QNu-Di-gvN" firstAttribute="leading" secondItem="Djq-SU-hgm" secondAttribute="trailing" constant="10" id="oog-tP-CVQ"/>
+                    <constraint firstItem="2dg-Z1-Yyy" firstAttribute="top" secondItem="JSO-wY-gsx" secondAttribute="bottom" constant="16" id="rUs-kK-JoR"/>
+                    <constraint firstAttribute="trailing" secondItem="JSO-wY-gsx" secondAttribute="trailing" constant="20" id="y2S-Hj-6jk"/>
+                    <constraint firstItem="QNu-Di-gvN" firstAttribute="centerY" secondItem="Djq-SU-hgm" secondAttribute="centerY" id="yAn-bJ-cfQ"/>
+                </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                </userDefinedRuntimeAttributes>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="carbohydratesLabel" destination="SX3-4J-qpF" id="jjL-pZ-xfV"/>
+                <outlet property="descriptionText" destination="JSO-wY-gsx" id="MzE-Kn-e9v"/>
+                <outlet property="fatsLabel" destination="LLl-uL-Ct6" id="wWN-mH-RhY"/>
+                <outlet property="proteinLabel" destination="QNu-Di-gvN" id="7GD-Av-yTn"/>
+            </connections>
+            <point key="canvasLocation" x="261.53846153846155" y="78.909952606635073"/>
+        </tableViewCell>
+    </objects>
+</document>
