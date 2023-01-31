@@ -29,6 +29,9 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <action selector="searchChanged:" destination="KGk-i7-Jjw" eventType="editingChanged" id="W1O-zh-ZjH"/>
+                        </connections>
                     </textField>
                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXH-KV-3LA">
                         <rect key="frame" x="58" y="54" width="50" height="50"/>

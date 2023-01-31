@@ -38,6 +38,9 @@ final class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
+        viewOutput?.getReloadUserDefaults()
+        
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -214,19 +217,19 @@ extension MainViewController: UINavigationControllerDelegate {
         let transition: UIViewControllerAnimatedTransitioning?
 
         switch (fromVC, toVC) {
-        case (_, is DetailViewController):
+        case (is MainViewController, is DetailViewController):
             let moveElementsTransition = TransitionWithDetail()
             moveElementsTransition.operation = .push
             transition = moveElementsTransition
-        case (is DetailViewController, _):
+        case (is DetailViewController, is MainViewController):
             let moveElementsTransition = TransitionWithDetail()
             moveElementsTransition.operation = .pop
             transition = moveElementsTransition
-        case (_, is SearchModuleViewController):
+        case (is MainViewController, is SearchModuleViewController):
             let moveElementsTransition = TransitionWithSearch()
             moveElementsTransition.operation = .push
             transition = moveElementsTransition
-        case (is SearchModuleViewController, _):
+        case (is SearchModuleViewController, is MainViewController):
             let moveElementsTransition = TransitionWithSearch()
             moveElementsTransition.operation = .pop
             transition = moveElementsTransition
@@ -404,7 +407,6 @@ extension MainViewController: AnimationSearchProtocol {
         guard let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? NavigationTableViewCell else {
             return []
         }
-        print(cell.getSearchButton().frame)
         return [cell.getSearchButton()]
     }
     
@@ -423,11 +425,20 @@ extension MainViewController: AnimationSearchProtocol {
 // MARK: - NavigationOutput
 
 extension MainViewController: NavigationOutput {
+    func pushProfileScreen() {
+        DispatchQueue.main.async {
+            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.viewOutput?.pushProfileScreen()
+        }
+    }
+    
     func pushSearchScreen() {
         DispatchQueue.main.async {
             self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.viewOutput?.pushSearchScreen()
         }
     }

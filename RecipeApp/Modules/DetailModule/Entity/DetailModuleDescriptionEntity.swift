@@ -10,7 +10,7 @@ class DetailModuleDescriptionEntity {
     struct Item: Codable {
         let idRecipe: Int
         let descriptionText: String
-        let userInfo: [UserInfo]
+        let userInfo: [UserInfo]?
         let caloricContent: [CaloricContent]
     }
 

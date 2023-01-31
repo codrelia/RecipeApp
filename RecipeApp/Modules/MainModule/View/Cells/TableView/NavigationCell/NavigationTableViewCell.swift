@@ -39,6 +39,9 @@ class NavigationTableViewCell: UITableViewCell {
         navigationOutput?.pushSearchScreen()
     }
     
+    @IBAction func tapOnProfileButton(_ sender: Any) {
+        navigationOutput?.pushProfileScreen()
+    }
     // MARK: - Methods
     
     func setOutput(_ navigationOutput: NavigationOutput) {

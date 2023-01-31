@@ -37,6 +37,11 @@ class SearchNavigationTableViewCell: UITableViewCell {
         output?.tapOnBackButton()
     }
     
+    @IBAction func searchChanged(_ sender: Any) {
+        if let searchText = searchTextField.text {
+            output?.setFilterPhrase(searchText: searchText)
+        }
+    }
 }
 
 // MARK: - Private methods

@@ -4,4 +4,5 @@ import UIKit
 protocol MainModuleRouterInput: AnyObject {
     func pushDetailScreen(data: (Data?, UIImage?))
     func pushSearchScreen()
+    func pushProfileScreen()
 }

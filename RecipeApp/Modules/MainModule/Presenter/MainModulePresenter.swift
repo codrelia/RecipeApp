@@ -96,4 +96,16 @@ extension MainModulePresenter: MainViewOutput {
     func pushSearchScreen() {
         routerInput?.pushSearchScreen()
     }
+    
+    func getReloadUserDefaults() {
+        reloadData()
+    }
+    
+    func pushProfileScreen() {
+        guard let token = UserDefaultsService.getDataFromUserDefaults("token") as? String else {
+            routerInput?.pushProfileScreen()
+            return
+        }
+        print(token)
+    }
 }

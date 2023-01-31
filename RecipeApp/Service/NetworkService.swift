@@ -13,6 +13,7 @@ class NetworkService {
         case description = "/description?id_recipe="
         case products = "/products?id_recipe="
         case preparation = "/preparation?id_recipe="
+        case search = "/search"
     }
     
     enum errors: String, Error {

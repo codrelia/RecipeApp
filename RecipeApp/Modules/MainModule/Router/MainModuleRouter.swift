@@ -6,6 +6,7 @@ class MainModuleRouter {
     var presenter: MainModulePresenter?
     var detailRouter: DetailModuleRouter?
     var searchRouter: SearchModuleRouter?
+    var loginRouter: LoginModuleRouter?
     
     init() {
         self.view = MainViewController()
@@ -31,5 +32,11 @@ extension MainModuleRouter: MainModuleRouterInput {
         searchRouter = SearchModuleRouter()
         guard let searchRouter = searchRouter else { return }
         self.view?.navigationController?.pushViewController(searchRouter.view!, animated: true)
+    }
+    
+    func pushProfileScreen() {
+        loginRouter = LoginModuleRouter()
+        guard let loginRouter = loginRouter else { return }
+        self.view?.navigationController?.pushViewController(loginRouter.view!, animated: true)
     }
 }

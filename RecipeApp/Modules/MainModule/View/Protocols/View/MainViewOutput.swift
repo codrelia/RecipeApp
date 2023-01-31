@@ -12,4 +12,7 @@ protocol MainViewOutput: AnyObject {
     
     func pushDetailScreen(id: Int)
     func pushSearchScreen()
+    func pushProfileScreen()
+    
+    func getReloadUserDefaults()
 }
