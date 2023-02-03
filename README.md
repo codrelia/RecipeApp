@@ -21,6 +21,8 @@
 
 Запросы принимаются с написанной на **Oracle Apex** БД. 
 
+Дизайн: https://www.figma.com/file/bi2Bdg0aNRBAvvHMWjDQSN/RecipeApp?t=MXNlKSFokSeqycRz-6
+
 ![Image alt](https://i.postimg.cc/yYjDJ3Rm/image.png)
 
 ## Реализованные элементы
